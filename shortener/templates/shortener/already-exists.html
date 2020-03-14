@@ -1,0 +1,18 @@
+
+{% extends 'base.html' %}
+
+
+{% block title %}
+	{{ object.shortcode }} | {{ block.super }}
+{% endblock %}
+{% block content %}
+	<div style=" align-text: center; width: 400px; margin: 0 auto">
+		<h1> Already exists</h1>
+		<p>{{ object.url }}</p>
+		<p><a href="{{ object.get_short_url }}">{{ object.get_short_url }}</a></p>
+		{% if object.clickevent %}
+			<p> {{ object.clickevent.count }}</p>
+		{% endif %}
+		<a class="btn btn-success" href="/">+ New</a>
+	</div>
+{% endblock %}
